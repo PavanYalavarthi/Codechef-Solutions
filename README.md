@@ -15,7 +15,7 @@ These files are mainly a backup of the problems I’ve solved and also a simple 
 
 ## What Each File Contains
 
-- Problem credit (link to the official SPOJ problem).  
+- Problem credit (link to the official codechef problem).  
 - A short description of the problem.  
 - A simple explanation of the algorithm used.  
 - The final working code solution.
