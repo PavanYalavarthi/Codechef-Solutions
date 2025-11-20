@@ -12,9 +12,9 @@ Output
 Output a single line containing the maximum number of pairs of chopsticks the Chef can form.
 
 Constraints
-1 ≤ N ≤ 100,000 (105)
-0 ≤ D ≤ 1,000,000,000 (109)
-1 ≤ L[i] ≤ 1,000,000,000 (109) for all integers i from 1 to N
+1 <= N <= 100,000 (105)
+0 <= D <= 1,000,000,000 (109)
+1 <= L[i] <= 1,000,000,000 (109) for all integers i from 1 to N
 
 #greedy
 */

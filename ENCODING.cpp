@@ -11,10 +11,10 @@ e-th digit, where e=0 corresponds to the least significant digit of x.
 For example, 388,822,442 can be split into subsequences "3", "888", "22", "44", "2", where 
 e=7 for the sequence "888" and e=4 for the sequence "22".
 
-The value of a subsequence which contains a digit d repeated one or more times is d⋅10^e.
+The value of a subsequence which contains a digit d repeated one or more times is d.10^e.
 
 f(x) is the sum of values of these subsequences. For example, 
-f(388,822,442)=3⋅10^8 +8⋅10^7+2⋅10^4+4⋅10^2+2⋅10^0.
+f(388,822,442)=3.10^8 +8.10^7+2.10^4+4.10^2+2.10^0.
 
 The oven has a screen which displays two long integers L and R (with NL and NR  digits respectively, without leading zeros). The password is the sum of 
 f(x) for each x between L and R inclusive.

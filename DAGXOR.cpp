@@ -2,7 +2,7 @@
 
 Problem credits: https://www.codechef.com/problems/DAGXOR
 
-There are N nodes in a circuit. The first N−1 nodes are connected in the form of a rooted tree with root 1. All the leaf nodes of the rooted tree are then connected with node 
+There are N nodes in a circuit. The first N-1 nodes are connected in the form of a rooted tree with root 1. All the leaf nodes of the rooted tree are then connected with node 
 N.For each N nodes, you are allowed to select a value among 1,2,3 and 0. You need to calculate the number of possible ways of assigning values to N nodes such that for all the paths from node 
 1 to node N have a xor sum equal to 0. The xor sum of a path is the xor of values of all the nodes present in the path.
 
@@ -14,8 +14,8 @@ In the path, an edge cannot be visited more than once.
 
 First-line contains an integer T, denoting the number of test cases. For each test case:-
 First-line will contain one integer N, the number of nodes in the circuit.
-Next N−2 lines, each have two integers 
-u and v denoting an edge between u and v. This N−2 edges form the rooted tree with N−1 nodes.
+Next N-2 lines, each have two integers 
+u and v denoting an edge between u and v. This N-2 edges form the rooted tree with N-1 nodes.
 */
 
 /*

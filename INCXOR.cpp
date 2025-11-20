@@ -1,7 +1,7 @@
 /*
 Problem credits: https://www.codechef.com/problems/INCXOR/ 
 
-You are given a sequence of n integers a1, ..., an. Count the number of sequences b = b1, ..., bn such that: 0 ≤ b1 ≤ ... ≤ bn < 2^31 and (a1 XOR b1) ≤ … ≤ (an XOR bn). Return this count, modulo 10^9+7.
+You are given a sequence of n integers a1, ..., an. Count the number of sequences b = b1, ..., bn such that: 0 <= b1 <= ... <= bn < 2^31 and (a1 XOR b1) <= ... <= (an XOR bn). Return this count, modulo 10^9+7.
 
 Here XOR denotes the bitwise XOR.
 
@@ -33,7 +33,7 @@ Because numbers are compared bit-by-bit starting from the most significant bit.
 Meaning:
 
 If at the CURRENT bit, bBit[i] < bBit[i+1] then we know
-bi < bi+1 forever — order is FIXED.
+bi < bi+1 forever - order is FIXED.
 
 If at the CURRENT bit, bBit[i] > bBit[i+1],
 bi > bi+1 → ordering is violated → invalid assignment.
@@ -44,7 +44,7 @@ the ordering of bi and bi+1 is NOT yet known. We must wait for lower bits.
 
 bMask[i] = 1 means: The ordering between bi and bi+1 is ALREADY decided in a previous bit.
 
-bMask[i] = 0 means: Order between bi and bi+1 is STILL UNKNOWN — depends on lower bits.
+bMask[i] = 0 means: Order between bi and bi+1 is STILL UNKNOWN - depends on lower bits.
 
 Same meaning for xorMask.
 

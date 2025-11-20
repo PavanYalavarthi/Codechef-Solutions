@@ -19,8 +19,8 @@ Output
 T lines, each line containing an integer - the answer to the test case.
 
 Constraints
-1 ≤ T ≤ 100
-99≤a<b≤10 ^ 18
+1 <= T <= 100
+99<=a<b<=10 ^ 18
  
 Sample Input:
 2

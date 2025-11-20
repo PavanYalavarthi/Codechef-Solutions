@@ -22,7 +22,7 @@ The i-th of the next N lines contains two integers xi and yi denoting coordinate
 The i-th of the next N lines contains a string si of length K, consisting of characters '1' and '0'. The j-th character is '1' if and only if the j-th ingredient is available in this shop.
 
 Output
-For each test case, output a single line containing the answer: a number -1 if Limak can't get all K ingredients, or one real value otherwise — the minimum total distance. The relative or absolute error shouldn't exceed 10-6.
+For each test case, output a single line containing the answer: a number -1 if Limak can't get all K ingredients, or one real value otherwise - the minimum total distance. The relative or absolute error shouldn't exceed 10-6.
 
 #bit_masking_dp
 */

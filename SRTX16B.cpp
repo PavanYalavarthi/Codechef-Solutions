@@ -32,16 +32,16 @@ Constraints and Subtasks
 Should contain all the constraints on the input data that you may have. Format it like:
 
 Subtask 1: 1 points
-1 ≤ T ≤ 10
-1 ≤ N ≤ 20
+1 <= T <= 10
+1 <= N <= 20
 
 Subtask 2: 29 points
-1 ≤ T ≤ 1000
-1 ≤ N ≤ 100000
+1 <= T <= 1000
+1 <= N <= 100000
 
 Subtask 3: 70 points
-1 ≤ T ≤ 100000
-1 ≤ N ≤ 1000000000
+1 <= T <= 100000
+1 <= N <= 1000000000
 
 Example
 Input:
