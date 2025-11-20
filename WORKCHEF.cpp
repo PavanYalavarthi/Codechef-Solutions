@@ -23,7 +23,9 @@ For each question, output an integer in a separate line containing the answer of
 Solution: As we needed to find number is divisible by digits, using number % 2520 (as it is LCM of digits 1-9)
 
 And rest is standard digit DP template
-*/
+
+Below is the logic of above solution:
+
 #include<bits/stdc++.h>
 using namespace std;
 #define ll long long
@@ -41,7 +43,7 @@ ll helper(int pos, int modM, int mask, bool tight, const string & s) {
         return dp[pos][modM][mask][tight] = (cnt >= k);
     } else {
         int last_digit = tight ? s[pos] - '0' : 9;
-        int res = 0;
+        ll res = 0;
         for (int i = 0; i <= last_digit; i++) {
             if (i == 0)  //skipping zeros
                 res += helper(pos + 1, (modM * 10) % MOD, mask, tight && (i == last_digit), s);
@@ -62,5 +64,59 @@ int main() {
         ll ans = helper(0, 0, 0, true, to_string(r));
         memset(dp, -1, sizeof(dp));
         cout << ans - helper(0, 0, 0, true, to_string(l-1)) << endl;
+    }
+}
+
+But, Above does give TLE for higher constraints
+
+Note: 
+
+To minimize TLE, we are taking 5 out of the mod, making it 504 possibilities and check 5 divisibility looking at last digit.
+
+As we are only using last in last phase, not memonizing, and also state depend on last, last stage ans is not saved.
+*/
+
+
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long
+#define MOD 504
+int k;
+ll dp[20][504][1 << 9][2]; //504 as it is LCM of digits 1-9 except 5
+ll helper(int pos, int modM, int mask, bool tight, const string & s, int last) {
+    if (dp[pos][modM][mask][tight] != -1) return dp[pos][modM][mask][tight];
+    if(pos == s.size()) {
+        int cnt = 0;
+        for(int i = 1; i <= 9; i++) {
+            if ((i != 5) && mask & (1 << (i-1)) && modM % i == 0) 
+                cnt++;
+        }
+        if ((mask & (1 << 4)) && (last % 5 == 0)) {
+            cnt++;
+        }
+        return (cnt >= k);
+    } else {
+        int last_digit = tight ? s[pos] - '0' : 9;
+        ll res = 0;
+        for (int i = 0; i <= last_digit; i++) {
+            if (i == 0)  //skipping zeros
+                res += helper(pos + 1, (modM * 10) % MOD, mask, tight && (i == last_digit), s, i);
+            else
+                res += helper(pos+1, (modM * 10 + i) % MOD, mask | (1 << (i-1)), tight && (i == last_digit), s, i);
+        }
+        return dp[pos][modM][mask][tight] = res;
+    }
+}
+int main() {
+    cin.tie(nullptr)->sync_with_stdio(false);
+    int Q;
+    cin >> Q;
+    while(Q--) {
+        ll l, r;
+        cin >> l >> r >> k;
+        memset(dp, -1, sizeof(dp));
+        ll ans = helper(0, 0, 0, true, to_string(r), 0);
+        memset(dp, -1, sizeof(dp));
+        cout << ans - helper(0, 0, 0, true, to_string(l-1), 0) << endl;
     }
 }
